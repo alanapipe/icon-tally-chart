@@ -1,0 +1,52 @@
+xAxisColumn,yAxisColumn,name,Firm
+1,9,"<strong>Leon Black</strong>,<br>  <strong> CEO</strong> and <strong>chair </strong>at <strong>Apollo Global Management</strong>",Apollo Global Management
+2,9,"<strong>Scott Kleinman</strong>,<br><strong> co-president </strong>at <strong>Apollo Global Management</strong>",Apollo Global Management
+3,9,"<strong>James Zelter</strong>,<br><strong> co-president </strong>at <strong>Apollo Global Management</strong>",Apollo Global Management
+4,9,"<strong>Martin Kelly</strong>,<br><strong> CFO </strong>and <strong>co-COO</strong> at <strong>Apollo Global Management</strong>",Apollo Global Management+E5
+5,9,"<strong>Anthony Civale</strong>,<br><strong> co-COO </strong>at <strong>Apollo Global Management</strong>",Apollo Global Management
+6,9,"<strong>Josh Harris</strong>,<br> <strong> co-founder </strong>at <strong>Apollo Global Management</strong>",Apollo Global Management
+7,9,"<strong>Mark Rowan</strong>,<br> <strong> co-founder </strong>at <strong>Apollo Global Management</strong>",Apollo Global Management
+1,8,"<strong>Michael Arougheti</strong>,<br>  <strong>CEO</strong> and <strong>president </strong>at <strong>Ares Management</strong>",Ares Management
+2,8,"<strong>Antony Ressler</strong>,<br>  <strong>executive chairman</strong> at <strong>Ares Management</strong>",Ares Management
+3,8,"<strong>Michael McFerran</strong>,<br>  <strong>CFO</strong> and <strong>COO</strong> at <strong>Ares Management</strong>",Ares Management
+4,8,"<strong>Bennett Rosenthal</strong>,<br>  <strong>co-founder</strong> and <strong>co-head of private equity </strong>at <strong>Ares Management</strong>",Ares Management
+5,8,"<strong>David KaplanAppian Corp</strong>,<br>  <strong>co-founder</strong> and <strong>co-head of private equity </strong>at <strong>Ares Management</strong>",Ares Management
+1,7,"<strong>Josh Beckenstein</strong>,<br> <strong> co-chair </strong>at <strong>Bain Capital</strong>",Bain Capital
+2,7,"<strong>Steve Pagliuca</strong>,<br> <strong> co-chair </strong>at <strong>Bain Capital</strong>",Bain Capital
+3,7,"<strong>Michael Ward</strong>,<br> <strong> CFO</strong> and <strong>COO </strong>at <strong>Bain Capital</strong>",Bain Capital
+4,7,"<strong>Jonathan Lavine</strong>,<br>  <strong> co-managing partner </strong>at <strong>Bain Capital</strong> and <strong>CIO</strong> of <strong>Bain Credit</strong>",Bain Capital
+5,7,"<strong>John Connaughton</strong>,<br><strong> co-managing partner </strong> and <strong>global head of private equity</strong> at <strong>Bain Capital</strong>",Bain Capital
+1,6,"<strong>Stephen Schwarzman</strong>,<br> <strong> CEO </strong>and<strong> chair</strong> at <strong>Blackstone Group</strong>",BlackStone Group
+2,6,"<strong>Johnathan Gray</strong>,<br> <strong> president </strong>and<strong> COO</strong> at <strong>Blackstone Group</strong>",BlackStone Group
+3,6,"<strong>Michael Chae</strong>,<br> <strong> CFO </strong> at <strong>Blackstone Group</strong>",BlackStone Group
+4,6,"<strong>Tony James</strong>,<br> <strong> executive vice chairman </strong> at <strong>Blackstone Group</strong>",BlackStone Group
+1,5,"<strong>Kewsong Lee</strong>,<br> <strong> co-CEO</strong> at <strong>Carlyle Group</strong>",Carlyle Group
+2,5,"<strong>Glenn Youngkin</strong>,<br> <strong> co-CEO</strong> at <strong>Carlyle Group</strong>",Carlyle Group
+3,5,"<strong>William Conway, Jr.</strong>,<br> <strong> co-executive chair </strong> and <strong> co-CIO </strong> at <strong>Carlyle Group</strong>",Carlyle Group
+4,5,"<strong>David Rubenstein</strong>,<br> <strong> co-executive chair </strong> at <strong>Carlyle Group</strong>",Carlyle Group
+5,5,"<strong>Curtis Buser</strong>,<br> <strong> CFO </strong> at <strong>Carlyle Group</strong>",Carlyle Group
+6,5,"<strong>Christopher Finn</strong>,<br> <strong> COO </strong> at <strong>Carlyle Group</strong>",Carlyle Group
+7,5,"<strong>Peter Clare</strong>,<br> <strong> co-CIO </strong> at <strong>Carlyle Group</strong>",Carlyle Group
+8,5,"<strong>Daniel D'Aniello</strong>,<br> <strong> chairman emeritus </strong> at <strong>Carlyle Group</strong>",Carlyle Group
+1,4,"<strong>Ritson Ferguson</strong>,<br> <strong> global CEO </strong>at <strong>CBRE Global Investors</strong>",CBRE
+2,4,"<strong>Ian Zieger</strong>,<br> <strong> global CFO </strong>at <strong>CBRE Global Investors</strong>",CBRE
+3,4,"<strong>Andrew Glanzman</strong>,<br> <strong> global COO </strong>at <strong>CBRE Global Investors</strong>",CBRE
+4,4,"<strong>Jeremy Plummer</strong>,<br> <strong> global CIO </strong>at <strong>CBRE Global Investors</strong>",CBRE
+1,3,"<strong>Henry Kravis</strong>,<br> <strong> co-CEO </strong>and <strong> chair </strong>at <strong>KKR</strong>",KKR
+2,3,"<strong>George Roberts</strong>,<br> <strong> co-CEO </strong>and <strong> chair </strong>at <strong>KKR</strong>",KKR
+3,3,"<strong>Joseph Bae</strong>,<br> <strong> co-president </strong>at <strong>KKR</strong>",KKR
+4,3,"<strong>Scott Nuttall</strong>,<br> <strong> co-president </strong>at <strong>KKR</strong>",KKR
+5,3,"<strong>William Janetschek</strong>,<br> <strong> CFO </strong>at <strong>KKR</strong>",KKR
+1,2,"<strong>Jeff Jacobson</strong>,<br> <strong> global CEO </strong>at <strong>LaSalle Investment Management</strong>",LaSalle
+2,2,"<strong>Michael Ricketts</strong>,<br> <strong> global CFO </strong>at <strong>LaSalle Investment Management</strong>",LaSalle
+1,1,"<strong>Jay Wintrob</strong>,<br> <strong> CEO </strong>at <strong>Oaktree Capital Management</strong>",Oaktree Capital MGMT
+2,1,"<strong>Howard Marks</strong>,<br> <strong> co-chair </strong>at <strong>Oaktree Capital Management</strong>",Oaktree Capital MGMT
+3,1,"<strong>Bruce Karsh</strong>,<br><strong> co-chair </strong>and <strong>CIO </strong>at <strong>Oaktree Capital Management</strong>",Oaktree Capital MGMT
+4,1,"<strong>Dan Levin</strong>,<br> <strong> CFO</strong> at <strong>Oaktree Capital Management</strong>",Oaktree Capital MGMT
+5,1,"<strong>John Frank</strong>,<br> <strong> vice chair </strong>at <strong>Oaktree Capital Management</strong>",Oaktree Capital MGMT
+1,0,"<strong>James Coulter</strong>,<br> <strong> co-CEO </strong>at <strong>TPG</strong>",TPG
+2,0,"<strong>Jon Winkelried</strong>,<br> <strong> co-CEO </strong>at <strong>TPG</strong>",TPG
+3,0,"<strong>David Bonderman</strong>,<br> <strong> chair </strong>at <strong>TPG</strong>",TPG
+4,0,"<strong>Jonathan Garfinkel</strong>,<br> <strong> co-COO </strong>at <strong>TPG</strong>",TPG
+5,0,"<strong>Ken Murphy</strong>,<br> <strong> co-COO </strong>at <strong>TPG</strong>",TPG
+6,0,"<strong>Jonathan Coslet</strong>,<br> <strong> CIO </strong>at <strong>TPG</strong>",TPG

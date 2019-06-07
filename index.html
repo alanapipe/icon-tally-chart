@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- link to version 4 of d3 -->
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+  <!-- instead of stylesheets -->
+  <link rel='stylesheet' href="https://use.typekit.net/ckg7yjc.css">
+  <link rel='stylesheet' href="ag-stylesheet-ap.css">
+
+</head>
+
+<body>
+  <div class='headline-style'>Women Are Missing from the C-Suite Elite</div>
+  <div class='subhed-style'>At the 10 largest U.S.-based private equity and real assets firms by assets under management, no women are in the classic top management roles of CEO, chair, president, CFO, COO, chief investment officer, or managing partner, nor are they in co-founder or vice chair senior leadership posts. Hover over each icon for details.</div>
+
+  <script>
+    // declate outer height and width as variables to easily modify
+    var outerWidth = 620,
+      outerHeight = 500;
+
+    var fundFireColors = [ '#990000','#FF9933', '#006666', '#99CC33', '#009999','#006699', '#CC0000'],
+      agendaColors = ['#98002E', '#582700', '#336699', '#996600', '#003366',  '#004F24', '#759900','#646569'],
+      ignitesColors = [ '#E61C3A', '#F06100', '#B2651F', '#004F24', '#70B5D3', '#EDC55B', '#807A89'],
+      boardIqColors = ['#0F004E','#EC881D','#783300','#339999'],
+      mandateWireColors = ['#7EA0C3', '#E09859', '#93B595', '#B297AF'];
+
+
+//choose which publication this infographic is for
+    let publicationColors = agendaColors;
+    let sourceText = "Source: <span>Fundfire</span> analysis of executives collected from firm websites and firm representatives.";
+
+    // make variable for margins to easily move the axes/ differentiate between inner and outer
+    var margin = {
+      top: 60,
+      left: 220,
+      right: 300,
+      bottom: 30
+    };
+
+    //declare the inner width of just the chart (just call it width) and define it in relation to the margins we made
+    var width = outerWidth - margin.left - margin.right,
+      height = outerHeight - margin.top - margin.bottom;
+
+
+    //create a linear scale for the x coordinates
+    var xScale = d3.scaleLinear()
+      .range([0, width]);
+
+    //create a linear scale for the y coordinates, and put the larger number (height variable) first so that the y axis will flip
+    var yScale = d3.scaleLinear()
+      .range([height-30, 0]);
+
+
+    //create an ordinal scale and fill it with colors. the colors can be assigned one by one to specified categories. storing schemes in a variable here.
+    var colorScale = d3.scaleOrdinal()
+      .range(publicationColors);
+
+    // LOAD THE DATA --> the data is stored in a "dictionary" the + is to turn the row names into strings? or strings to js
+    d3.csv("data/icontally.csv", function(err, csvData) {
+      csvData.forEach(function(row) {
+        //EDIT for x axis values
+        row.xAxisColumn = +row.xAxisColumn;
+        //EDIT for y axis values
+        row.yAxisColumn = +row.yAxisColumn;
+        //follow this pattern for any numeric data
+      });
+
+      //pass it the variable that will become the xAxis
+      var xAxisValues = csvData.map(function(row) {
+        return row.xAxisColumn;
+      });
+
+      // pass it the variable that will become Y axis
+      var yAxisValues = csvData.map(function(row) {
+        return row.yAxisColumn;
+      });
+
+      //set the domain of the linear x scale to be the extent (lowest and highest) datapoints
+      xScale.domain(d3.extent(xAxisValues));
+
+      //ADJUST MAX AND MIN OF Y AXIS
+      yScale.domain(d3.extent(yAxisValues));
+
+//make the inside canvas smaller than the outside canvas to things dont get cut off
+      var svg = d3.select("body")
+        .append("svg")
+        .attr("width", outerWidth)
+        .attr("height", outerHeight)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + " " + margin.top + ")");
+
+        //make a tooltip out of a div. the div will be invisible until we hover on the iconmen.
+      var div = d3.select("body")
+        .append("div")
+        .attr("class", "tooltip-style")
+        .style('opacity',0);
+
+
+      //define iconmen and bind to data
+      csvData.forEach(function(row) {
+        svg.append("png:image")
+  .attr("xlink:href", "iconman.png")
+  .attr("width", 11)
+  .attr("height", 30)
+  .datum(row);
+      });
+
+      //call iconmen
+      var iconmen = svg.selectAll("image")
+        .attr("x", function(d) {
+          return xScale(d.xAxisColumn);
+        })
+        .attr("y", function(d) {
+          return yScale(d.yAxisColumn);
+        })
+        // .attr("fill", function(d) {
+        //   return colorScale(d.seriesColor);
+        // })
+        .attr('opacity', '0.9')
+        //still in reference to iconmen, tell iconmen what to look like when not hovering.
+        .on('mouseout', function(d){
+        div.transition()
+        .duration(1000)
+        .style('opacity',0)
+        d3.select(this)
+        .attr('stroke','none')
+        ;
+      })
+      //tell iconmen what to look like when the mouse is hovering and call the tooltip that lives in the css stylesheet
+        .on('mouseover', function(d){
+        d3.select(this).attr('stroke', '#fff')
+        div.transition()
+        .duration(200)
+        .style('opacity',1)
+        div.html(d.name)
+        // only tinker with this if the numbers absolutely must be styled differently
+        // div.html(function(d){
+        //   return (d.name +' organizations made up'+ d.year)
+        // })
+        .style("left", (d3.event.pageX +20) + "px")
+                .style("top",(d3.event.pageY -10) + "px");
+        })
+
+        var menLabel = d3.select("svg")
+          .append("text")
+          .attr('x',220)
+          .attr('y',20)
+          .attr('class','categoryLabel')
+          .text("Men");
+
+          var womenLabel = d3.select("svg")
+            .append("text")
+            .attr('x',415)
+            .attr('y',20)
+            .attr('class','categoryLabel')
+            .text("Women");
+
+
+
+
+        var label1 = d3.select("svg")
+          .append("text")
+          .attr('x',5)
+          .attr('y',80)
+          .attr('class','boldLabel')
+          .text("Apollo Global Management");
+
+          var label2 = d3.select("svg")
+            .append("text")
+            .attr('x',5)
+            .attr('y',123)
+            .attr('class','boldLabel')
+            .text("Ares Management");
+
+            var label3 = d3.select("svg")
+              .append("text")
+              .attr('x',5)
+              .attr('y',166)
+              .attr('class','boldLabel')
+              .text("Bain Capital");
+
+              var label4 = d3.select("svg")
+                .append("text")
+                .attr('x',5)
+                .attr('y',210)
+                .attr('class','boldLabel')
+                .attr('text-anchor','right')
+                .text("Blackstone Group");
+
+                var label5 = d3.select("svg")
+                  .append("text")
+                  .attr('x',5)
+                  .attr('y',253)
+                  .attr('class','boldLabel')
+                  .attr('text-anchor','right')
+                  .text("Carlyle Group");
+
+                  var label6 = d3.select("svg")
+                    .append("text")
+                    .attr('x',5)
+                    .attr('y',296)
+                    .attr('class','boldLabel')
+                    .attr('text-anchor','right')
+                    .text("CBRE Global Investors");
+
+                    var label7 = d3.select("svg")
+                      .append("text")
+                      .attr('x',5)
+                      .attr('y',336)
+                      .attr('class','boldLabel')
+                      .attr('text-anchor','right')
+                      .text("KKR");
+
+                      var label8 = d3.select("svg")
+                        .append("text")
+                        .attr('x',5)
+                        .attr('y',378)
+                        .attr('class','boldLabel')
+                        .attr('text-anchor','right')
+                        .text("LaSalle Investment Management");
+
+                        var label9 = d3.select("svg")
+                          .append("text")
+                          .attr('x',5)
+                          .attr('y',418)
+                          .attr('class','boldLabel')
+                          .attr('text-anchor','right')
+                          .text("Oaktree Capital Management");
+
+                          var label10 = d3.select("svg")
+                            .append("text")
+                            .attr('x',5)
+                            .attr('y',460)
+                            .attr('class','boldLabel')
+                            .attr('text-anchor','right')
+                            .text("TPG");
+
+
+//add the source as html
+        var sourceLabel = d3.select("body")
+          .append("div")
+          .attr("class", "sourceLabel")
+          .html(sourceText)
+    });
+
+  </script>
+</body>
